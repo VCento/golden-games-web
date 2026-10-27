@@ -1,0 +1,520 @@
+/* Golden Games landing. Palette "Casino Elegante" only. Mobile-first. */
+
+:root {
+  --navy: #0f2540;        /* container bg */
+  --navy-deep: #0a1628;   /* header bg */
+  --panel: #1a3a5c;       /* panel / card */
+  --gold: #FFD700;
+  --gold-dark: #B08800;
+  --gold-light: #FFF8B0;
+  --silver: #C0C0C0;
+  --ivory: #f5f0e0;
+  --white: #ffffff;
+  --text-dark: #1a3a5c;
+  --muted: rgba(255, 255, 255, 0.7);
+
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-display: Georgia, "Noto Serif", "Times New Roman", serif;
+
+  --gutter: 20px;
+  --radius: 20px;
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--navy);
+  color: var(--ivory);
+  font-family: var(--font-body);
+  font-size: 1.25rem;          /* 20px */
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.875rem;         /* 30px */
+  color: var(--gold);
+}
+
+h3 {
+  font-size: 1.5rem;           /* 24px */
+  color: var(--gold);
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: var(--gold);
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 2px;
+}
+
+a:hover {
+  color: var(--gold-light);
+}
+
+:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+.band--ivory :focus-visible {
+  outline-color: var(--text-dark);
+}
+
+.wrap {
+  width: min(100% - 2 * var(--gutter), 1120px);
+  margin-inline: auto;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: var(--gutter);
+  top: -100px;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 8px 20px;
+  background: var(--gold);
+  color: var(--navy-deep);
+  font-weight: 700;
+  border-radius: 12px;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 12px;
+  color: var(--navy-deep);
+}
+
+/* Hero */
+.hero {
+  background: radial-gradient(120% 70% at 50% 0%, var(--panel) 0%, var(--navy) 55%, var(--navy-deep) 100%);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 40px 0 48px;
+  text-align: center;
+}
+
+.hero__inner {
+  display: grid;
+  gap: 24px;
+  justify-items: center;
+}
+
+.hero__logo {
+  width: 168px;
+  height: 168px;
+  border-radius: 36px;
+  box-shadow: 0 0 0 2px var(--gold-dark), 0 18px 40px var(--navy-deep);
+}
+
+.hero h1 {
+  font-size: 2.5rem;           /* 40px */
+  color: var(--gold);
+  letter-spacing: 0.01em;
+}
+
+.hero__lead {
+  font-size: 1.375rem;         /* 22px */
+  line-height: 1.5;
+  max-width: 30ch;
+  margin-inline: auto;
+  color: var(--ivory);
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pills li {
+  border: 2px solid var(--gold-dark);
+  border-radius: 999px;
+  padding: 4px 16px;
+  font-size: 1.125rem;         /* 18px */
+  color: var(--ivory);
+  background: var(--navy-deep);
+}
+
+.store {
+  display: grid;
+  gap: 14px;                   /* badge clear space: 1/4 of its height */
+  justify-items: center;
+}
+
+.play-badge {
+  display: inline-block;
+  border-radius: 14px;
+  line-height: 0;
+}
+
+.play-badge img {
+  width: 250px;
+  height: auto;
+}
+
+.store__note {
+  font-size: 1.125rem;         /* 18px */
+  color: var(--muted);
+}
+
+/* Sections */
+.section {
+  padding: 56px 0;
+}
+
+.section__head {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.section__intro {
+  margin-top: 12px;
+  color: var(--muted);
+}
+
+/* Games */
+.games {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.game {
+  flex: 0 1 340px;
+  background: var(--panel);
+  border: 1px solid var(--gold-dark);
+  border-radius: var(--radius);
+  padding: 24px 20px 28px;
+  text-align: center;
+}
+
+.game p {
+  margin-top: 8px;
+}
+
+/* Screenshots */
+.section--deep {
+  background: var(--navy-deep);
+}
+
+/* One column on phones so app text stays readable. */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  max-width: 280px;
+  margin-inline: auto;
+}
+
+.gallery figure {
+  margin: 0;
+  text-align: center;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 16px;
+  border: 2px solid var(--gold-dark);
+  background: var(--navy);
+}
+
+.gallery figcaption {
+  margin-top: 10px;
+  font-size: 1.125rem;         /* 18px */
+  color: var(--ivory);
+}
+
+/* Why (ivory band) */
+.band--ivory {
+  background: var(--ivory);
+  color: var(--text-dark);
+}
+
+.band--ivory h2,
+.band--ivory h3 {
+  color: var(--text-dark);
+}
+
+.features {
+  display: grid;
+  gap: 16px;
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  column-gap: 16px;
+  row-gap: 12px;
+  align-items: center;
+  background: var(--white);
+  border: 1px solid var(--gold-dark);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.feature__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--panel);
+  display: grid;
+  place-items: center;
+}
+
+.feature__icon svg {
+  width: 32px;
+  height: 32px;
+  stroke: var(--gold);
+  fill: none;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.feature h3 {
+  font-size: 1.5rem;
+}
+
+.feature p {
+  grid-column: 1 / -1;
+}
+
+/* FAQ */
+.faq {
+  display: grid;
+  gap: 16px;
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.faq__item {
+  background: var(--panel);
+  border-left: 4px solid var(--gold);
+  border-radius: 12px;
+  padding: 20px 20px 22px;
+}
+
+.faq__item p {
+  margin-top: 8px;
+}
+
+.text-link {
+  display: inline-block;
+  padding-block: 10px;
+  min-height: 48px;
+  font-weight: 700;
+}
+
+/* Final call to action */
+.cta {
+  background: var(--navy-deep);
+  border-top: 2px solid var(--gold-dark);
+  text-align: center;
+}
+
+.cta p {
+  max-width: 34ch;
+  margin: 12px auto 24px;
+}
+
+/* Footer */
+.site-footer {
+  background: var(--navy-deep);
+  border-top: 1px solid var(--panel);
+  padding: 32px 0 40px;
+  font-size: 1.125rem;         /* 18px */
+  color: var(--muted);
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 24px;
+  margin-bottom: 16px;
+}
+
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding-inline: 4px;
+}
+
+.site-footer p + p {
+  margin-top: 8px;
+}
+
+.site-footer .maker {
+  color: var(--ivory);
+  font-weight: 700;
+}
+
+/* 404 */
+.notfound {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 40px var(--gutter);
+}
+
+/* Larger screens */
+@media (min-width: 600px) {
+  .hero h1 {
+    font-size: 3rem;           /* 48px */
+  }
+
+  h2 {
+    font-size: 2.25rem;        /* 36px */
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 20px;
+    max-width: 560px;
+  }
+
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: none;
+  }
+
+  .feature {
+    flex: 0 1 calc((100% - 16px) / 2);
+    align-content: start;
+  }
+}
+
+@media (min-width: 900px) {
+  body {
+    font-size: 1.3125rem;      /* 21px */
+  }
+
+  .hero {
+    padding: 72px 0;
+    text-align: left;
+  }
+
+  .hero__inner {
+    grid-template-columns: 1.3fr 1fr;
+    align-items: center;
+    justify-items: start;
+    gap: 48px;
+  }
+
+  .hero__logo {
+    order: 2;
+    justify-self: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 64px;
+  }
+
+  .hero__text {
+    display: grid;
+    gap: 24px;
+    justify-items: start;
+  }
+
+  .hero h1 {
+    font-size: 3.75rem;        /* 60px */
+  }
+
+  .hero__lead {
+    margin-inline: 0;
+    font-size: 1.625rem;       /* 26px */
+  }
+
+  .pills,
+  .store {
+    justify-content: start;
+    justify-items: start;
+  }
+
+  .section {
+    padding: 80px 0;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    max-width: 1040px;
+  }
+
+  .feature {
+    flex-basis: calc((100% - 32px) / 3);
+  }
+}
+
+@media (max-width: 899px) {
+  .hero__text {
+    display: grid;
+    gap: 20px;
+    justify-items: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
